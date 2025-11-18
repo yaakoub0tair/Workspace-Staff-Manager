@@ -128,3 +128,46 @@ body {
     font-size: 0.8rem;
     color: #555;
 }
+
+
+/* Profile Modal */
+
+.profile-box {
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    animation: popup 0.25s ease-out;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.profile-box h2,
+.profile-box h3 {
+    text-align: center;
+}
+
+.location {
+    margin-top: 15px;
+    text-align: center;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
