@@ -1,0 +1,79 @@
+/* Zones */
+
+.zones {
+    flex: 1;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.zone {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.zone:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.zone.restricted {
+    border: 2px dashed #e74c3c;
+}
+
+.zone-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.zone-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.btn-add-zone {
+    width: 32px;
+    height: 32px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add-zone:hover {
+    background: #2980b9;
+    transform: rotate(90deg);
+}
+
+.zone-info {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+}
+
+.zone-staff {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
