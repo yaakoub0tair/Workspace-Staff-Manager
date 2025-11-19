@@ -5,84 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workspace Staff Manager</title>
+    <title>WorkSphere - Staff Manager</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- NAVBAR -->
+    <!-- TOP BAR -->
     <nav class="navbar">
         <div class="logo">WorkSphere</div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Unassigned Staff</h2>
-            <button id="add-worker-btn">Add New Worker</button>
-            <ul id="unassigned-list">
+    <main class="main">
 
+        <!-- SIDE MENU -->
+        <aside class="side-menu">
+            <h2>Staff Members (Unassigned)</h2>
+            <button id="btn-add-worker">Add New Worker</button>
+
+            <!-- Search + Filter -->
+
+
+            <ul id="list-workers">
+                <!-- Workers added dynamically -->
             </ul>
         </aside>
 
-        <!-- Zones building -->
-        <section class="zones">
-            <div class="zone" id="conference">Salle de conférence</div>
-            <div class="zone" id="reception">Réception</div>
-            <div class="zone" id="servers">Salle des serveurs</div>
-            <div class="zone" id="security">Salle de sécurité</div>
-            <div class="zone" id="staff">Salle du personnel</div>
-            <div class="zone" id="archives">Salle d’archives</div>
-        </section>
+
     </main>
-    <!-- Modal Add Worker -->
-    <div id="worker-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Add New Worker</h3>
-            <form id="worker-form">
-                <input type="text" placeholder="Nom" name="name" required>
-                <input type="text" placeholder="Rôle" name="role">
-                <input type="url" placeholder="Photo URL" name="photo">
-                <input type="email" placeholder="Email" name="email">
-                <input type="tel" placeholder="Téléphone" name="phone">
-
-                <div id="experiences-container">
-                    <h4>Expériences</h4>
-                    <button type="button" id="add-experience">+ Expérience</button>
-                </div>
-
-                <button type="submit">Ajouter</button>
-            </form>
-        </div>
-    </div>
-    <!-- Employee Profile Modal -->
-    <div id="profile-modal" class="modal hidden">
-        <div class="modal-content profile-box">
-            <span id="close-profile" class="close">&times;</span>
-
-            <img id="profile-photo" class="profile-photo" src="" alt="photo">
-
-            <h2 id="profile-name"></h2>
-            <p id="profile-role"></p>
-            <p id="profile-email"></p>
-            <p id="profile-phone"></p>
-
-            <h3>Expériences professionnelles</h3>
-            <ul id="profile-exp"></ul>
-
-            <p class="location"><strong>Localisation:</strong> <span id="profile-location"></span></p>
-        </div>
-    </div>
 
 
 
-    <script src="js/modal.js"></script>
-    <script src="js/ajoterEmployer.js"></script>
-    <script src="js/ajouterZone.js"></script>
-    <script src="js/updateZone.js"></script>
-    <script src="js/checkacces.js"></script>
+
+
+
 </body>
 
 </html>
