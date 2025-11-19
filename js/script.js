@@ -139,3 +139,35 @@ function updateZones() {
 
     displayUnassigned();
 }
+
+const div = document.createElement("div");
+div.classList.add("worker");
+div.setAttribute("data-id", emp.id);
+div.addEventListener("click", () => openProfile(emp.id));
+li.setAttribute("data-id", emp.id);
+li.addEventListener("click", () => openProfile(emp.id));
+
+function openProfile(id) {
+    const emp = employees.find(e => e.id == id);
+
+    document.getElementById("profile-photo").src = emp.photo;
+    document.getElementById("profile-name").innerText = emp.name;
+    document.getElementById("profile-role").innerText = `Rôle: ${emp.role}`;
+    document.getElementById("profile-email").innerText = `Email: ${emp.email}`;
+    document.getElementById("profile-phone").innerText = `Téléphone: ${emp.phone}`;
+    document.getElementById("profile-location").innerText = emp.location;
+
+    // Experiences
+    const expList = document.getElementById("profile-exp");
+    expList.innerHTML = "";
+    emp.experiences.forEach(exp => {
+        const li = document.createElement("li");
+        li.innerText = `${exp.job} (${exp.start} → ${exp.end})`;
+        expList.appendChild(li);
+    });
+
+    document.getElementById("profile-modal").classList.remove("hidden");
+}
+document.getElementById("close-profile").addEventListener("click", () => {
+    document.getElementById("profile-modal").classList.add("hidden");
+});
