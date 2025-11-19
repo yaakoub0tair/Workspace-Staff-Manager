@@ -18,17 +18,29 @@
     <main class="main">
 
         <!-- SIDE MENU -->
-        <aside class="side-menu">
+        <aside class="side">
             <h2>Staff Members (Unassigned)</h2>
             <button id="btn-add-worker">Add New Worker</button>
 
             <!-- Search + Filter -->
+            <div class="search">
+                <input type="text" class="search-in" id="searchInput" placeholder="🔍 Search by name or role...">
 
+                <div class="filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="receptionist">Receptionist</button>
+                    <button class="filter-btn" data-filter="it">IT</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                    <button class="filter-btn" data-filter="manager">Manager</button>
+                    <button class="filter-btn" data-filter="cleaning">Cleaning</button>
+                </div>
+            </div>
 
             <ul id="list-workers">
                 <!-- Workers added dynamically -->
             </ul>
         </aside>
+
 
 
     </main>
