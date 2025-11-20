@@ -103,6 +103,87 @@
 
 
     </main>
+    <!-- ADD / EDIT WORKER POPUP -->
+    <div id="popup-worker" class="popup hidden">
+        <div class="p-body">
+
+            <div class="p-header">
+                <h2>Add New Worker</h2>
+                <button class="btn-close">×</button>
+            </div>
+
+            <form id="form-worker">
+
+                <div class="form-box">
+                    <label>Full Name *</label>
+                    <input type="text" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-box">
+                    <label>Role *</label>
+                    <select required>
+                        <option value="">Select role</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="it">IT Technician</option>
+                        <option value="security">Security Agent</option>
+                        <option value="manager">Manager</option>
+                        <option value="cleaning">Cleaning Staff</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-box">
+                    <label>Photo URL</label>
+                    <input type="url" placeholder="https://example.com/photo.jpg">
+
+                    <div class="preview-photo">
+                        <span>No Photo</span>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <label>Email *</label>
+                    <input type="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-box">
+                    <label>Phone *</label>
+                    <input type="tel" placeholder="+212 6XX XXX XXX" required>
+                </div>
+
+                <div class="experience-area">
+                    <h3>Professional Experiences</h3>
+
+                    <div class="experience-box">
+                        <div class="form-box">
+                            <label>Company</label>
+                            <input type="text" placeholder="Company name">
+                        </div>
+
+                        <div class="form-box">
+                            <label>Position</label>
+                            <input type="text" placeholder="Job title">
+                        </div>
+
+                        <div class="form-box">
+                            <label>Start Date</label>
+                            <input type="date" class="start-date">
+                        </div>
+
+                        <div class="form-box">
+                            <label>End Date</label>
+                            <input type="date" class="end-date">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-add-experience">+ Add Experience</button>
+                </div>
+
+                <button type="submit" class="submit-btn">Save Employee</button>
+            </form>
+        </div>
+    </div>
+
 
 
 
