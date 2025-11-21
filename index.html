@@ -10,23 +10,23 @@
 </head>
 
 <body>
-    <!-- TOP BAR -->
+
     <nav class="navbar">
         <div class="logo">WorkSphere</div>
     </nav>
 
     <main class="main">
 
-        <!-- SIDE MENU -->
-        <aside class="side">
+
+
+        <aside class="sidebar">
             <h2>Staff Members (Unassigned)</h2>
-            <button id="btn-add-worker">Add New Worker</button>
 
-            <!-- Search + Filter -->
-            <div class="search">
-                <input type="text" class="search-in" id="searchInput" placeholder="🔍 Search by name or role...">
+            <button class="add-worker-btn" id="btn-add-worker">Add New Worker</button>
 
-                <div class="filter">
+            <div class="search-and-filter">
+                <input type="text" class="search-input" id="searchInput" placeholder="Exercitationem hic v">
+                <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="receptionist">Receptionist</button>
                     <button class="filter-btn" data-filter="it">IT</button>
@@ -36,12 +36,10 @@
                 </div>
             </div>
 
-            <ul id="list-workers">
-                <!-- Workers added dynamically -->
-            </ul>
-
+            <div class="staff-list" id="list-workers">
+            </div>
         </aside>
-        <!-- ZONES -->
+
         <section class="zones">
 
             <div class="zone" id="zone-conference">
@@ -103,7 +101,6 @@
 
 
     </main>
-    <!-- ADD / EDIT WORKER POPUP -->
     <div id="popup-worker" class="popup ">
         <div class="p-body">
 
@@ -183,16 +180,28 @@
             </form>
         </div>
     </div>
-    <!-- Profile Modal -->
     <div id="profileModal" class="modal hidden">
         <div class="modal-content">
-            <!-- Profile content will be added dynamically -->
         </div>
     </div>
 
 
 
-
+    <div id="worker-selection-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="selection-modal-title">Select a Worker</h2>
+                <button class="btn-close-selection">×</button>
+            </div>
+            <div class="modal-body">
+                <ul id="worker-selection-list" class="worker-selection-list">
+                </ul>
+                <p id="no-workers-message" class="hidden">
+                    No eligible unassigned workers for this zone.
+                </p>
+            </div>
+        </div>
+    </div>
     <script type="module" src="js/main.js"></script>
 
 
