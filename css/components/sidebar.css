@@ -1,121 +1,152 @@
-/* Sidebar */
-
-.side {
+.sidebar {
     width: 320px;
-    background: white;
+    background: #fdfdff;
     padding: 24px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.side h2 {
+.sidebar h2 {
     font-size: 20px;
-    margin-bottom: 20px;
+    font-weight: 600;
     color: #2c3e50;
+    margin: 0;
 }
 
-#add-worker-btn {
+.add-worker-btn {
     width: 100%;
     padding: 14px;
-    background: #27ae60;
+    background-color: #27ae60;
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 24px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
-#add-worker-btn:hover {
-    background: #229954;
+.add-worker-btn:hover {
+    background-color: #229954;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
 }
 
-#add-worker-btn:active {
-    transform: translateY(0);
+.search-and-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.search {
-    margin-bottom: 16px;
-}
-
+.search-input,
 .search-in {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #ecf0f1;
-    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     font-size: 14px;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 
-.search-in:focus {
-    outline: none;
-    border-color: #3498db;
-}
-
+.filter-buttons,
 .filter {
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
 .filter-btn {
-    padding: 6px 12px;
-    background: #ecf0f1;
+    background-color: #f1f5f9;
+    color: #475569;
     border: none;
-    border-radius: 8px;
-    font-size: 12px;
+    border-radius: 16px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.filter-btn.active {
-    background: #3498db;
-    color: white;
+    transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
-    background: #bdc3c7;
+    background-color: #e0e6e8;
 }
 
-.filter-btn.active:hover {
-    background: #2980b9;
+.filter-btn.active {
+    background-color: #3b82f6;
+    color: white;
 }
 
-
-/* Unassigned List */
-
-#list-workers {
-    list-style: none;
+.staff-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-
-/* Empty State */
-
-.empty-state {
-    text-align: center;
-    padding: 40px 20px;
-    color: #7f8c8d;
+.staff-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
 }
 
-.empty-state svg {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 16px;
-    opacity: 0.5;
+.staff-card:hover {
+    background-color: #e9ecef;
+    transform: translateX(4px);
 }
 
-.empty-state p {
+.staff-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.staff-avatar {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.staff-details h3 {
     font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 2px 0;
+}
+
+.staff-details p {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.edit-btn {
+    padding: 6px 12px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: #e67e22;
 }

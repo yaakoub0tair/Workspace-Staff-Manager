@@ -1,14 +1,12 @@
-/* Zones */
-
 .zones {
     flex: 1;
     padding: 24px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .zone {
@@ -16,11 +14,8 @@
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    position: relative;
     transition: all 0.3s ease;
     min-height: 250px;
-    background-size: cover;
-    background-position: center;
 }
 
 .zone:hover {
@@ -31,6 +26,11 @@
     border: 2px dashed #e74c3c;
 }
 
+.zone.zone-empty {
+    background-color: #fff5f5;
+    border: 2px dashed #e74c3c;
+}
+
 .zone-head {
     display: flex;
     justify-content: space-between;
@@ -38,6 +38,8 @@
     margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 2px solid #ecf0f1;
+    gap: 10px;
+    flex-wrap: nowrap !important;
 }
 
 .zone-name {
@@ -59,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .btn-add-zone:hover {
@@ -76,4 +79,61 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 16px;
+}
+
+.employee-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    transition: all 0.2s ease-in-out;
+}
+
+.employee-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.employee-details h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 2px 0;
+}
+
+.employee-details p {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.remove-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
 }

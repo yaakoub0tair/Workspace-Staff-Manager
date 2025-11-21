@@ -1,0 +1,122 @@
+#profileModal.modal {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#profileModal .modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 32px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#profileModal.modal.hidden .modal-content {
+    transform: scale(0.9);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 32px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.profile-main-info h2 {
+    margin: 0 0 4px 0;
+    font-size: 24px;
+    color: #1e293b;
+}
+
+.profile-main-info p {
+    margin: 0;
+    font-size: 16px;
+    color: #64748b;
+}
+
+.btn-close-profile {
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    color: #64748b;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.btn-close-profile:hover {
+    background-color: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+.profile-body {
+    padding-top: 20px;
+}
+
+.profile-body h3 {
+    font-size: 16px;
+    color: #334155;
+    margin: 0 0 12px 0;
+}
+
+.profile-contact,
+.profile-experiences {
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.profile-contact p {
+    margin: 0 0 8px 0;
+    color: #475569;
+    word-break: break-word;
+}
+
+.profile-contact p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-experience-item {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-experience-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-experience-item strong {
+    color: #334155;
+}
+
+.profile-experience-item small {
+    color: #94a3b8;
+}
