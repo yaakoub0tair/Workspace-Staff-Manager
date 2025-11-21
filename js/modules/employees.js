@@ -1,15 +1,23 @@
-// js/modules/employees.js
-import { DOM } from './dom.js';
+import { showProfileModal } from '../main.js';
 
 export function addWorkerToList(worker) {
-    const li = document.createElement('li');
-    li.classList.add('worker-item');
+    const staffListContainer = document.getElementById('list-workers');
+    const staffCard = document.createElement('div');
+    staffCard.className = 'staff-card';
+    staffCard.dataset.employee = JSON.stringify(worker);
 
-    li.innerHTML = `
-        <strong>${worker.fullName}</strong> - ${worker.role} <br>
-        Email: ${worker.email} | Phone: ${worker.phone}
-        ${worker.experiences.length ? `<ul>${worker.experiences.map(exp => `<li>${exp.position} at ${exp.company} (${exp.startDate} - ${exp.endDate})</li>`).join('')}</ul>` : ''}
-    `;
+    const initial = worker.fullName.charAt(0).toUpperCase();
+    const avatarHtml = worker.photo ?
+        `<div class="staff-avatar" style="background-image: url('${worker.photo}')"></div>` :
+        `<div class="staff-avatar">${initial}</div>`;
 
-    DOM.listWorkers.appendChild(li);
+    staffCard.innerHTML = `<div class="staff-info">${avatarHtml}<div class="staff-details"><h3>${worker.fullName}</h3><p>${worker.role}</p></div></div><button class="edit-btn">Edit</button>`;
+
+    staffCard.addEventListener('click', (event) => {
+        if (event.target.classList.contains('edit-btn')) return;
+        const workerData = JSON.parse(staffCard.dataset.employee);
+        showProfileModal(workerData);
+    });
+
+    staffListContainer.appendChild(staffCard);
 }
