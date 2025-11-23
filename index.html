@@ -111,14 +111,14 @@
 
             <form id="form-worker">
 
-                <div class="form-box  ">
+                <div class="form-box">
                     <label>Full Name *</label>
-                    <input type="text" placeholder="Enter full name" required>
+                    <input type="text" id="workerName" placeholder="Enter full name" required>
                 </div>
 
-                <div class="form-box  ">
+                <div class="form-box">
                     <label>Role *</label>
-                    <select required>
+                    <select id="workerRole" required>
                         <option value="">Select role</option>
                         <option value="receptionist">Receptionist</option>
                         <option value="it">IT Technician</option>
@@ -129,55 +129,55 @@
                     </select>
                 </div>
 
-                <div class="form-box  ">
+                <div class="form-box">
                     <label>Photo URL</label>
-                    <input type="url" placeholder="https://example.com/photo.jpg">
-
+                    <input type="url" id="workerPhoto" placeholder="https://example.com/photo.jpg">
                     <div class="preview-photo">
                         <span>No Photo</span>
                     </div>
                 </div>
 
-                <div class="form-box  ">
+                <div class="form-box">
                     <label>Email *</label>
-                    <input type="email" placeholder="email@example.com" required>
+                    <input type="email" id="workerEmail" placeholder="email@example.com" required>
                 </div>
 
-                <div class="form-box  ">
+                <div class="form-box">
                     <label>Phone *</label>
-                    <input type="tel" placeholder="+212 6XX XXX XXX" required>
+                    <input type="tel" id="workerPhone" placeholder="+212 6XX XXX XXX" required>
                 </div>
 
-                <div class="experience-area">
+                <div class="experience-area" id="experienceArea">
                     <h3>Professional Experiences</h3>
 
-                    <div class="experience-item">
-                        <div class="form-box  ">
+                    <div class="experience-item" id="firstExperienceItem">
+                        <div class="form-box">
                             <label>Company</label>
-                            <input type="text" placeholder="Company name">
+                            <input type="text" id="company" placeholder="Company name">
                         </div>
 
-                        <div class="form-box  ">
+                        <div class="form-box">
                             <label>Position</label>
-                            <input type="text" placeholder="Job title">
+                            <input type="text" id="position" placeholder="Job title">
                         </div>
 
-                        <div class="form-box  ">
+                        <div class="form-box">
                             <label>Start Date</label>
                             <input type="date" class="start-date">
                         </div>
 
-                        <div class="form-box  ">
+                        <div class="form-box">
                             <label>End Date</label>
                             <input type="date" class="end-date">
                         </div>
                     </div>
 
-                    <button type="button" class="btn-add-experience">+ Add Experience</button>
+                    <button type="button" id="btnAddExperience" class="btn-add-experience">+ Add Experience</button>
                 </div>
 
                 <button type="submit" class="submit-btn">Save Employee</button>
             </form>
+
         </div>
     </div>
     <div id="profileModal" class="modal hidden">
