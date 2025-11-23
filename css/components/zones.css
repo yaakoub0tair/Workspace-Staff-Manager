@@ -26,11 +26,6 @@
     border: 2px dashed #e74c3c;
 }
 
-.zone.zone-empty {
-    background-color: #fff5f5;
-    border: 2px dashed #e74c3c;
-}
-
 .zone-head {
     display: flex;
     justify-content: space-between;
