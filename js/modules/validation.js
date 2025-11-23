@@ -24,3 +24,12 @@ export function validateURL(url) {
         return false;
     }
 }
+
+
+export function validateExperienceDates(startDate, endDate) {
+    if (!startDate || !endDate) return true;
+
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    return start < end;
+}
