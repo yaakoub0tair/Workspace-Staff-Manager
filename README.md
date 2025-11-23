@@ -45,7 +45,7 @@ screenshots:
 
 installation:
   steps:
-    - "Cloner le dépôt : git clonehttps://github.com/yaakoub0tair/Workspace-Staff-Manager.git
+    - "Cloner le dépôt : git clone https://github.com/yaakoub0tair/Workspace-Staff-Manager.git"
     - "Ouvrir le projet dans votre éditeur de code."
     - "Ouvrir index.html dans un navigateur web."
 
@@ -100,6 +100,3 @@ license:
   type: "MIT"
   file: "LICENSE"
   badge: "https://img.shields.io/badge/License-MIT-green.svg"
-
-
-
