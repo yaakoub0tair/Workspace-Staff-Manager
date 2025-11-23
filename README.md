@@ -131,7 +131,8 @@ Fonctionne parfaitement sur<br>tous les appareils
 <details>
 <summary><b>➕ Formulaire d'Ajout d'Employé</b></summary>
 <br>
-<img src="assets/add-worker.png" alt="Add Worker" width="100%">
+
+![Add Worker Form](assets/add-worker.png)
 
 *Formulaire complet avec validation en temps réel, prévisualisation photo et gestion des expériences*
 </details>
@@ -139,7 +140,8 @@ Fonctionne parfaitement sur<br>tous les appareils
 <details>
 <summary><b>👤 Modal de Profil Détaillé</b></summary>
 <br>
-<img src="assets/profile-modal.png" alt="Profile Modal" width="100%">
+
+![Profile Modal](assets/profile-modal.png)
 
 *Affichage élégant des informations complètes de l'employé avec historique professionnel*
 </details>
