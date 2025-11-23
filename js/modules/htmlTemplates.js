@@ -1,13 +1,12 @@
 function getAvatarHTML(name, photo, className = 'staff-avatar') {
-    const initial = name.charAt(0).toUpperCase();
 
-    if (photo) {
-        return `<div class="${className}" style="background-image: url('${photo}')"></div>`;
+    if (photo && photo.trim() !== '') {
+        return `<div class="${className} has-photo" style="background-image: url('${photo}');"></div>`;
     }
 
-    return `<div class="${className}">${initial}</div>`;
-}
 
+    return `<div class="${className} no-photo"></div>`;
+}
 export function getEmployeeCardHTML(worker) {
     return `
         <div class="staff-card" data-employee='${JSON.stringify(worker)}' data-employee-id="${worker.id || ''}">
@@ -87,6 +86,34 @@ export function getSelectionItemHTML(worker) {
         <div>
             <h4>${worker.fullName}</h4>
             <p>${worker.role}</p>
+        </div>
+    `;
+}
+
+export function getExperienceItemHTML(experienceId) {
+    return `
+        <div class="experience-item" data-experience-id="${experienceId}" style="display: block;">
+            <div class="form-box">
+                <label>Company</label>
+                <input type="text" class="exp-company" placeholder="Company name">
+            </div>
+            
+            <div class="form-box">
+                <label>Position</label>
+                <input type="text" class="exp-position" placeholder="Job title">
+            </div>
+            
+            <div class="form-box">
+                <label>Start Date</label>
+                <input type="date" class="exp-start-date">
+            </div>
+            
+            <div class="form-box">
+                <label>End Date</label>
+                <input type="date" class="exp-end-date">
+            </div>
+            
+            <button type="button" class="remove-experience-btn">Remove Experience</button>
         </div>
     `;
 }
