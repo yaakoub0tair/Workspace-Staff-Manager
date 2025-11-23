@@ -1,5 +1,6 @@
 import { DOM } from './dom.js';
 import { addWorkerToList } from './employees.js';
+import { getZoneEmployeeCardHTML, getSelectionItemHTML } from './htmlTemplates.js';
 
 const zoneConfig = {
     'zone-conference': { capacity: 10, required: false },
@@ -57,25 +58,9 @@ function handleRemoveWorker(event) {
 function addWorkerToZone(workerData, zoneElement) {
     const staffContainer = zoneElement.querySelector('.zone-staff');
 
-    const employeeCard = document.createElement('div');
-    employeeCard.className = 'employee-card';
-    employeeCard.dataset.employee = JSON.stringify(workerData);
-
-    const initial = workerData.fullName.charAt(0).toUpperCase();
-    const avatarHtml = workerData.photo ?
-        `<div class="employee-avatar" style="background-image: url('${workerData.photo}')"></div>` :
-        `<div class="employee-avatar">${initial}</div>`;
-
-    employeeCard.innerHTML = `
-        <div class="employee-info">
-            ${avatarHtml}
-            <div class="employee-details">
-                <h4>${workerData.fullName}</h4>
-                <p>${workerData.role}</p>
-            </div>
-        </div>
-        <button class="remove-btn">×</button>
-    `;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = getZoneEmployeeCardHTML(workerData);
+    const employeeCard = tempDiv.firstElementChild;
 
     employeeCard.querySelector('.remove-btn')
         .addEventListener('click', handleRemoveWorker);
@@ -100,19 +85,7 @@ function openWorkerSelectionModal(eligibleWorkers, zoneElement) {
             const workerData = JSON.parse(workerCard.dataset.employee);
 
             const listItem = document.createElement('li');
-            const initial = workerData.fullName.charAt(0).toUpperCase();
-
-            const avatarHtml = workerData.photo ?
-                `<div class="employee-avatar" style="background-image: url('${workerData.photo}')"></div>` :
-                `<div class="employee-avatar">${initial}</div>`;
-
-            listItem.innerHTML = `
-                ${avatarHtml}
-                <div>
-                    <h4>${workerData.fullName}</h4>
-                    <p>${workerData.role}</p>
-                </div>
-            `;
+            listItem.innerHTML = getSelectionItemHTML(workerData);
 
             listItem.addEventListener('click', () => {
                 addWorkerToZone(workerData, zoneElement);
@@ -132,8 +105,9 @@ function handleAddWorker(event) {
     const config = zoneConfig[zoneElement.id];
     const currentCount = zoneElement.querySelector('.zone-staff').children.length;
 
-    if (currentCount >= config.capacity)
+    if (currentCount >= config.capacity) {
         return alert(`Capacity full for this zone.`);
+    }
 
     const unassignedWorkers = Array.from(
         DOM.listWorkers.querySelectorAll('.staff-card')
@@ -147,7 +121,6 @@ function handleAddWorker(event) {
 }
 
 export function initializeZones() {
-
     DOM.zones.forEach(zone => {
         zone.querySelector('.btn-add-zone')
             .addEventListener('click', handleAddWorker);
@@ -156,7 +129,6 @@ export function initializeZones() {
     });
 
     if (DOM.selectionModal) {
-
         DOM.btnCloseSelection.addEventListener('click', () => {
             DOM.selectionModal.classList.add('hidden');
         });
