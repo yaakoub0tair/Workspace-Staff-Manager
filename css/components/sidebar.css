@@ -40,8 +40,7 @@
     gap: 16px;
 }
 
-.search-input,
-.search-in {
+.search-input {
     width: 100%;
     padding: 12px;
     border: 1px solid #e2e8f0;
@@ -49,8 +48,7 @@
     font-size: 14px;
 }
 
-.filter-buttons,
-.filter {
+.filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -103,23 +101,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.staff-avatar {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #3498db;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
 }
 
 .staff-details h3 {
