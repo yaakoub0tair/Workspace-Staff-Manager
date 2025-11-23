@@ -1,9 +1,12 @@
 import { DOM } from './dom.js';
 import { addWorkerToList } from './employees.js';
+import { validateFullName, validateEmail, validatePhone, validateURL } from './validation.js';
+
 
 export function initExperienceForm() {
     if (DOM.firstExperienceItem && DOM.btnAddExperience) {
         DOM.firstExperienceItem.style.display = 'none';
+
         DOM.btnAddExperience.addEventListener('click', () => {
             DOM.firstExperienceItem.style.display = 'block';
             DOM.btnAddExperience.style.display = 'none';
@@ -16,22 +19,37 @@ export function initWorkerForm() {
 
     DOM.formWorker.addEventListener('submit', (e) => {
         e.preventDefault();
+        const fullName = DOM.workerName.value.trim();
+        const email = DOM.workerEmail.value.trim();
+        const phone = DOM.workerPhone.value.trim();
+        const photo = DOM.workerPhoto.value.trim();
+        const role = DOM.workerRole.value.trim();
+
+
+        if (!validateFullName(fullName)) return alert('Invalid full name.');
+        if (!validateEmail(email)) return alert('Invalid email.');
+        if (!validatePhone(phone)) return alert('Invalid phone number.');
+        if (photo && !validateURL(photo)) return alert('Invalid photo URL.');
+
 
         const worker = {
-            fullName: DOM.formWorker.querySelector('input[type="text"]').value,
-            role: DOM.formWorker.querySelector('select').value,
-            photo: DOM.formWorker.querySelector('input[type="url"]').value,
-            email: DOM.formWorker.querySelector('input[type="email"]').value,
-            phone: DOM.formWorker.querySelector('input[type="tel"]').value,
+            fullName,
+            role,
+            photo,
+            email,
+            phone,
             experiences: []
         };
 
+
         DOM.experienceArea.querySelectorAll('.experience-item').forEach(exp => {
-            const company = exp.querySelector('input[placeholder="Company name"]').value;
-            if (company) {
+            const companyInput = exp.querySelector('#company');
+            const positionInput = exp.querySelector('#position');
+
+            if (companyInput && companyInput.value) {
                 worker.experiences.push({
-                    company: company,
-                    position: exp.querySelector('input[placeholder="Job title"]').value,
+                    company: companyInput.value,
+                    position: positionInput ? positionInput.value : '',
                     startDate: exp.querySelector('.start-date').value,
                     endDate: exp.querySelector('.end-date').value
                 });
@@ -41,8 +59,11 @@ export function initWorkerForm() {
         console.log("Données envoyées à addWorkerToList :", worker);
         addWorkerToList(worker);
 
+
         DOM.formWorker.reset();
-        DOM.experienceArea.querySelectorAll('.experience-item').forEach(exp => exp.style.display = 'none');
+        DOM.experienceArea.querySelectorAll('.experience-item')
+            .forEach(exp => exp.style.display = 'none');
+
         if (DOM.btnAddExperience) DOM.btnAddExperience.style.display = 'block';
         if (DOM.popupWorker) DOM.popupWorker.classList.remove('active');
     });
