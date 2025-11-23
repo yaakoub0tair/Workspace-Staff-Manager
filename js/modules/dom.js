@@ -16,7 +16,6 @@ export const DOM = {
     // Experience
     btnAddExperience: document.getElementById('btnAddExperience'),
     experienceArea: document.getElementById('experienceArea'),
-    firstExperienceItem: document.getElementById('firstExperienceItem'),
 
     // Workers List
     btnAddWorker: document.getElementById('btn-add-worker'),
